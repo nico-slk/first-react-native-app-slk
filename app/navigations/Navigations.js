@@ -19,6 +19,18 @@ export default function Navigation() {
             case 'restaurants':
                 iconName = 'compass-outline'
                 break;
+            case 'favorites':
+                iconName = 'heart-outline'
+                break;
+            case 'search':
+                iconName = 'magnify-outline'
+                break;
+            case 'topRestaurants':
+                iconName = 'star-outline'
+                break;
+            case 'account':
+                iconName = 'home-outline'
+                break;
 
             default:
                 break;
