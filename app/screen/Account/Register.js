@@ -1,28 +1,27 @@
 import React from 'react';
-import { Image, ScrollView, StyleSheet, Text } from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
+import RegisterForm from '../../components/Account/RegisterForm';
 
-export default function Favorites() {
-
+export default function Register() {
     return (
         <ScrollView centerContent={true} style={styles.viewBody} >
             <Image source={{ uri: "https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/dogs_1280p_0.jpg?itok=4t_1_fSJ" }} resizeMode="contain" style={styles.image} />
-            <Text style={styles.title} >Maar</Text>
-            <Text style={styles.description} >Al menos una vez a la semana.</Text>
+            <Text style={styles.title} >Register</Text>
+            <View style={styles.styleForm}>
+                <RegisterForm />
+            </View>
         </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
     viewBody: {
-        paddingBottom: 30,
         marginLeft: 30,
         marginRight: 30,
     },
     image: {
         height: 300,
         width: "100%",
-        marginBottom: 40,
-        marginTop: 40
     },
     title: {
         fontWeight: "bold",
@@ -30,8 +29,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         textAlign: "center"
     },
-    description: {
-        fontSize: 16,
-        textAlign: "center"
+    styleForm: {
+
     }
 })

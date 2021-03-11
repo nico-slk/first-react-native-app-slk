@@ -5,13 +5,13 @@ import * as firebase from 'firebase';
 
 export default function App() {
 
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
-      console.log(user)
-      console.log('WORKING')
-      console.log('HARDER')
-    })
-  }, [])
+  // useEffect(() => {
+  //   firebase.auth().onAuthStateChanged((user) => {
+  //     console.log(user)
+  //     console.log('WORKING')
+  //     console.log('HARDER')
+  //   })
+  // }, [])
 
   return <Navigation />
 }
