@@ -13,7 +13,7 @@ export default function App() {
   //   })
   // }, [])
 
-
+  { console.log('If you are watching this from you PC Browser, remember comment node_modules/react-native-easy-toaster/index.js:150 and /index.js:156 ( "style: ViewPropTypes.style," and "textStyle: Text.propTypes.style," )') }
   return <Navigation />
 }
 // "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
