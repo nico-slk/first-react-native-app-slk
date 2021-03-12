@@ -5,9 +5,9 @@ export default function Restaurants() {
 
     return (
         <ScrollView centerContent={true} style={styles.viewBody} >
-            <Image source={{ uri: "https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/dogs_1280p_0.jpg?itok=4t_1_fSJ" }} resizeMode="contain" style={styles.image} />
-            <Text style={styles.title} >Maar</Text>
-            <Text style={styles.description} >hhhhhh</Text>
+            <Image source={{ uri: "https://tinyurl.com/49ch5f7b" }} resizeMode="contain" style={styles.image} />
+            <Text style={styles.title} >Flash</Text>
+            <Text style={styles.description} >¡Wiiiii!</Text>
         </ScrollView>
     )
 }

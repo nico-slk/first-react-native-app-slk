@@ -5,9 +5,9 @@ export default function Favorites() {
 
     return (
         <ScrollView centerContent={true} style={styles.viewBody} >
-            <Image source={{ uri: "https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/dogs_1280p_0.jpg?itok=4t_1_fSJ" }} resizeMode="contain" style={styles.image} />
-            <Text style={styles.title} >Maar</Text>
-            <Text style={styles.description} >Al menos una vez a la semana.</Text>
+            <Image source={{ uri: "https://tinyurl.com/2yzvhxs6" }} resizeMode="contain" style={styles.image} />
+            <Text style={styles.title} >Happy</Text>
+            <Text style={styles.description} >¡Always smiling!</Text>
         </ScrollView>
     )
 }

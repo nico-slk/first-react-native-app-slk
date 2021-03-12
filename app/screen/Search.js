@@ -6,9 +6,9 @@ export default function Search() {
 
     return (
         <ScrollView centerContent={true} style={styles.viewBody} >
-            <Image source={{ uri: "https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/dogs_1280p_0.jpg?itok=4t_1_fSJ" }} resizeMode="contain" style={styles.image} />
-            <Text style={styles.title} >Maar</Text>
-            <Text style={styles.description} >asda</Text>
+            <Image source={{ uri: "https://tinyurl.com/m6e37ft9" }} resizeMode="contain" style={styles.image} />
+            <Text style={styles.title} >Brown</Text>
+            <Text style={styles.description} >¡Look amazing!</Text>
         </ScrollView>
     )
 }

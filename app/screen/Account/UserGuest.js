@@ -9,9 +9,10 @@ export default function UserGuest() {
 
     return (
         <ScrollView centerContent={true} style={styles.viewBody} >
-            <Image source={{ uri: "https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/dogs_1280p_0.jpg?itok=4t_1_fSJ" }} resizeMode="contain" style={styles.image} />
+            <Image source={{ uri: "https://tinyurl.com/4mbjnben" }} resizeMode="contain" style={styles.image} />
             <Text style={styles.title} >Estado: {state}</Text>
-            <Text style={styles.description} >Hola, esto es la descripción</Text>
+            <Text style={styles.title} >Hunter</Text>
+            <Text style={styles.description} >Te voy a morder</Text>
             <View style={styles.viewBtn}>
                 <Button buttonStyle={styles.btnStyle} containerStyle={styles.btnContainer} title="Estado +1 " onPress={() => setState(state + 1)} />
                 <Button buttonStyle={styles.btnStyle} containerStyle={styles.btnContainer} title="Navegar a Login" onPress={() => navigation.navigate("Login")} />

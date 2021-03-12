@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Divider } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/core';
+import Toast from 'react-native-easy-toast';
+import LoginForm from '../../components/Account/LoginForm';
 
 const CreateAccount = () => {
     const navigation = useNavigation();
+    const toastRef = useRef();
 
     return (
         <Text style={styles.description} >
@@ -18,9 +21,12 @@ export default function Login() {
 
     return (
         <ScrollView centerContent={true} style={styles.viewBody} >
-            <Image source={{ uri: "https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/dogs_1280p_0.jpg?itok=4t_1_fSJ" }} resizeMode="contain" style={styles.image} />
+            <Image source={{ uri: "https://tinyurl.com/2dxmc4e3" }} resizeMode="contain" style={styles.image} />
+            <Text style={styles.title} >Fat-Face</Text>
+            <Text style={styles.description} >¡ hEnLlo !</Text>
+            {/* <Toast ref={toastRef} position="center" opacity={0.9} /> */}
             <View style={styles.viewContainer}>
-                <Text style={styles.title} >Login</Text>
+                <LoginForm />
                 <CreateAccount />
             </View>
             <Divider style={styles.divider} />
@@ -51,8 +57,7 @@ const styles = StyleSheet.create({
         marginBottom: 30
     },
     viewContainer: {
-        marginRight: 40,
-        marginLeft: 40
+        marginTop: 30,
     },
     btnRegister: {
         color: "#00a680",
@@ -61,5 +66,9 @@ const styles = StyleSheet.create({
     divider: {
         backgroundColor: "#00a680",
         marginBottom: 30
+    },
+    description: {
+        fontSize: 16,
+        textAlign: "center"
     }
 })

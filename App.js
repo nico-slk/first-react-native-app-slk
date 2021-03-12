@@ -13,6 +13,7 @@ export default function App() {
   //   })
   // }, [])
 
+
   return <Navigation />
 }
 // "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",

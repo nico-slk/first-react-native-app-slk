@@ -1,16 +1,52 @@
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { isEmpty, size } from 'lodash';
 import { Button, Icon, Input } from 'react-native-elements';
+import { StyleSheet, View } from 'react-native';
+import { useNavigation } from '@react-navigation/core';
+import Loading from '../Loading';
 import { validateEmail } from '../../utils/validations';
+import * as firebase from 'firebase';
 
-
-export default function RegisterForm() {
+export default function RegisterForm({ toastRef, setLoading }) {
     const [showPassword, setShowPassword] = useState(false);
     const [data, setData] = useState({});
+    const navigation = useNavigation();
+
 
     const handleSubmit = () => {
         console.log(data);
-        console.log(validateEmail(data.email));
+        if (isEmpty(data.email) || isEmpty(data.password) || isEmpty(data.repassword)) {
+            // alert('No deben haber campos vacios');
+            toastRef.current.show('No deben haber campos vacios');
+        } else {
+            if (!validateEmail(data.email)) {
+                // alert('Formato de correo incorrecto');
+                toastRef.current.show('Formato de correo incorrecto');
+            } else {
+                if (size(data.password) < 6) {
+                    // alert('Las contraseñas es muy corta');
+                    toastRef.current.show('Las contraseñas es muy corta');
+                } else {
+                    if (data.password !== data.repassword) {
+                        // alert('Las contraseñas no coinciden');
+                        toastRef.current.show('Las contraseñas no coinciden');
+                    } else {
+                        setLoading(true);
+                        firebase
+                            .auth()
+                            .createUserWithEmailAndPassword(data.email, data.password)
+                            .then(() => {
+                                setLoading(false);
+                                navigation.navigate("Top 5");
+                            })
+                            .catch(() => {
+                                setLoading(false);
+                                toastRef.current.show('El correo ya está en uso')
+                            })
+                    }
+                }
+            }
+        }
     }
 
     const handleChange = (e, alt) => {
@@ -75,6 +111,7 @@ export default function RegisterForm() {
             />
         </View>
     )
+
 }
 
 const styles = StyleSheet.create({
@@ -85,7 +122,7 @@ const styles = StyleSheet.create({
     },
     btnContainerRegister: {
         width: "70%",
-        backgroundColor: "red",
+        backgroundColor: "blue",
         marginTop: 20
     },
     btnRegister: {

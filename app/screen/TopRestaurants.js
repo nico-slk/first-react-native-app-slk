@@ -5,9 +5,9 @@ export default function TopRestaurants() {
 
     return (
         <ScrollView centerContent={true} style={styles.viewBody} >
-            <Image source={{ uri: "https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/dogs_1280p_0.jpg?itok=4t_1_fSJ" }} resizeMode="contain" style={styles.image} />
-            <Text style={styles.title} >Maar</Text>
-            <Text style={styles.description} >De vez en cuando, cuando le pinta.</Text>
+            <Image source={{ uri: "https://tinyurl.com/3pya99wu" }} resizeMode="contain" style={styles.image} />
+            <Text style={styles.title} >Skinny</Text>
+            <Text style={styles.description} >¡Eat this!</Text>
         </ScrollView>
     )
 }
