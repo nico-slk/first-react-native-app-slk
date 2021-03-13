@@ -3,17 +3,34 @@ import { Button, StyleSheet, ToastAndroid, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import * as firebase from 'firebase'
 import { Icon, Input } from 'react-native-elements';
+import { isEmpty } from 'lodash';
 
-export default function LoginForm({ toastRef }) {
+export default function LoginForm({ toastRef, setLoading }) {
     const [login, setLogin] = useState({});
     const [showPassword, setShowPassword] = useState(false)
     const navigation = useNavigation();
 
     const handleSubmit = () => {
-        console.log(login)
-        firebase.auth().signInWithEmailAndPassword(login.email, login.password)
-            .then(() => navigation.navigate('Buscar'))
-            .catch(() => toastRef.current.show('Error al autenticar usuario'))
+        console.log(login);
+
+        if (isEmpty(login.email) || isEmpty(login.password)) {
+            if (isEmpty(login.email)) {
+                toastRef.current.show('Introduzca su correo');
+            } else {
+                toastRef.current.show('Introduzca una contraseña');
+            }
+        } else {
+            setLoading(true);
+            firebase.auth().signInWithEmailAndPassword(login.email, login.password)
+                .then(() => {
+                    setLoading(false);
+                    navigation.navigate('Cuentas');
+                })
+                .catch(() => {
+                    setLoading(false);
+                    toastRef.current.show('Error al autenticar usuario');
+                })
+        }
     }
 
     const handleChange = (e, alt) => {

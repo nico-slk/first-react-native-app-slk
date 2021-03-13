@@ -1,13 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Divider } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/core';
 import Toast from 'react-native-easy-toast';
 import LoginForm from '../../components/Account/LoginForm';
+import Loading from '../../components/Loading';
 
 const CreateAccount = () => {
     const navigation = useNavigation();
-    const toastRef = useRef();
 
     return (
         <Text style={styles.description} >
@@ -18,15 +18,18 @@ const CreateAccount = () => {
 }
 
 export default function Login() {
+    const toastRef = useRef();
+    const [loading, setLoading] = useState(false);
 
     return (
         <ScrollView centerContent={true} style={styles.viewBody} >
+            {loading === true && <Loading isVisible={true} text="Cargando" />}
             <Image source={{ uri: "https://tinyurl.com/2dxmc4e3" }} resizeMode="contain" style={styles.image} />
             <Text style={styles.title} >Fat-Face</Text>
             <Text style={styles.description} >¡ hEnLlo !</Text>
-            {/* <Toast ref={toastRef} position="center" opacity={0.9} /> */}
+            <Toast ref={toastRef} position="center" opacity={0.9} />
             <View style={styles.viewContainer}>
-                <LoginForm />
+                <LoginForm toastRef={toastRef} setLoading={setLoading} />
                 <CreateAccount />
             </View>
             <Divider style={styles.divider} />

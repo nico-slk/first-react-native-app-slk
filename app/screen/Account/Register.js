@@ -15,7 +15,7 @@ export default function Register() {
             <Text style={styles.title} >Mudkip</Text>
             <Text style={styles.description} >¡I'm a pokemon!</Text>
             <View style={styles.styleForm}>
-                <RegisterForm toastRef={toastRef} loading={loading} setLoading={setLoading} />
+                <RegisterForm toastRef={toastRef} setLoading={setLoading} />
             </View>
             <Toast ref={toastRef} position="center" opacity={0.9} style={styles.toastStyle} />
         </ScrollView>
