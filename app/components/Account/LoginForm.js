@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Button, StyleSheet, ToastAndroid, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import * as firebase from 'firebase'
-import { Icon, Input } from 'react-native-elements';
+import { Button, Icon, Input } from 'react-native-elements';
 import { isEmpty } from 'lodash';
 
 export default function LoginForm({ toastRef, setLoading }) {
@@ -38,7 +38,6 @@ export default function LoginForm({ toastRef, setLoading }) {
             ...login,
             [alt]: e.nativeEvent.text
         })
-        console.log(login)
     }
 
     return (
@@ -85,6 +84,8 @@ export default function LoginForm({ toastRef, setLoading }) {
 
 const styles = StyleSheet.create({
     viewContainer: {
+        flex: 1,
+        alignItems: "center",
         marginBottom: 30
     },
     btnContainer: {

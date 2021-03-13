@@ -23,7 +23,7 @@ export default function Login() {
 
     return (
         <ScrollView centerContent={true} style={styles.viewBody} >
-            {loading === true && <Loading isVisible={true} text="Cargando" />}
+            {loading === true && <Loading isVisible={loading} text="Cargando" />}
             <Image source={{ uri: "https://tinyurl.com/2dxmc4e3" }} resizeMode="contain" style={styles.image} />
             <Text style={styles.title} >Fat-Face</Text>
             <Text style={styles.description} >¡ hEnLlo !</Text>

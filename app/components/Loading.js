@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         borderColor: "#a1a1a1",
         borderWidth: 2,
-        borderRadius: 10,
+        borderRadius: 10
     },
     view: {
         flex: 1,
