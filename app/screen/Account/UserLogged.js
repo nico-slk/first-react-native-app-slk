@@ -26,7 +26,8 @@ export default function UserLogged() {
 
     return (
         <View style={styles.viewStyle} >
-            {loading === true && <Loading isVisible={loading} text="Cargando" />}
+            {loading && <Loading isVisible={loading} text="Cargando" />}
+            {console.log(loading)}
             {userInfo ? <InfoUser info={userInfo} /> : <Text>Cargando datos del usuario</Text>}
             <Text>Account Options</Text>
 

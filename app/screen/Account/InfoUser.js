@@ -11,7 +11,7 @@ export default function InfoUser({ info }) {
                 rounded
                 size="large"
                 containerStyle={styles.avatarStyle}
-                showEditButton
+                showEditButton={true}
                 source={{ uri: info.photoURL || "https://tinyurl.com/u9wtr39b" }}
             />
             <View style={styles.viewContainer} >

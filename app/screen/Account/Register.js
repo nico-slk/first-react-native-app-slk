@@ -19,9 +19,7 @@ export default function Register() {
             </View>
             <Toast ref={toastRef} position="center" opacity={0.9} style={styles.toastStyle} />
         </ScrollView>
-
     )
-
 }
 
 const styles = StyleSheet.create({
